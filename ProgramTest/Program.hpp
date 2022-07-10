@@ -15,6 +15,7 @@
 
 class Empleoyee;
 class ConsoleManager;
+class Loader;
 
 class Program{
 public:
@@ -25,12 +26,11 @@ private:
     bool init();
     bool deinit();
     void options();
-    void loadEmpleoyeesTest();
     ConsoleManager* _console;
+    Loader* _loader;
     bool _active;
     int _option;
     std::vector<Empleoyee*> _employees;
-    std::list<Empleoyee> _list;
 };
 
 #endif /* Program_hpp */
