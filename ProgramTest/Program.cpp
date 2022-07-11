@@ -34,10 +34,9 @@ bool Program::init(){
 bool Program::deinit(){
     delete _console;
     _console = NULL;
-    for (size_t i = 0; i < _employees.size(); i++){
-        delete _employees[i];
-        _employees[i] = NULL;
-    }
+    delete _loader;
+    _loader = NULL;
+
     return true;
 }
 
