@@ -21,7 +21,7 @@ public:
     ~Loader();
     std::vector<Empleoyee*> LoadUsers();
 private:
-    std::vector<Empleoyee*> _employees;
+    std::vector<Empleoyee*> mEmployees;
 };
 
 #endif /* Loader_hpp */

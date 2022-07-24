@@ -26,11 +26,11 @@ private:
     bool init();
     bool deinit();
     void options();
-    ConsoleManager* _console;
-    Loader* _loader;
-    bool _active;
-    int _option;
-    std::vector<Empleoyee*> _employees;
+    ConsoleManager* p_mConsole;
+    Loader* p_mLoader;
+    bool mActive;
+    int mOption;
+    std::vector<Empleoyee*> mEmployees;
 };
 
 #endif /* Program_hpp */

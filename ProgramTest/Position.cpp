@@ -12,37 +12,37 @@ Position::Position(){
     
 }
 
-Position::Position(POST post, SEN seniority, int salary)
+Position::Position(POSITIONS position, SENIORITIS seniority, int salary)
     :
-    _position(post),
-    _seniority(seniority),
-    _salary(salary)
+    mPosition(position),
+    mSeniority(seniority),
+    mSalary(salary)
 {}
 
 Position::~Position(){
     
 }
 
-void Position::setPosition(POST newPost){
-    _position = newPost;
+void Position::setPosition(POSITIONS newPosition){
+    mPosition = newPosition;
 }
 
-POST Position::getPosition(){
-    return _position;
+POSITIONS Position::getPosition(){
+    return mPosition;
 }
 
-void Position::setSeniority(SEN newSeniority){
-    _seniority = newSeniority;
+void Position::setSeniority(SENIORITIS newSeniority){
+    mSeniority = newSeniority;
 }
 
-SEN Position::getSeniority(){
-    return _seniority;
+SENIORITIS Position::getSeniority(){
+    return mSeniority;
 }
 
 void Position::setSalary(int newSalary){
-    _salary = newSalary;
+    mSalary = newSalary;
 }
 
 int Position::getSalary(){
-    return _salary;
+    return mSalary;
 }

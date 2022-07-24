@@ -23,16 +23,16 @@ class Empleoyee{
 public:
     Empleoyee();
     Empleoyee(string name, string lastName, string surname);
-    Empleoyee(string name, string lastName, string surname, POST post, SEN seniority, int salary);
+    Empleoyee(string name, string lastName, string surname, POSITIONS position, SENIORITIS seniority, int salary);
     ~Empleoyee();
-    void setEmpleoyee(string name, string lastName, string surname, POST post, SEN seniority, int salary);
-    void setPosition(POST post, SEN seniority, int salary);
+    void setEmpleoyee(string name, string lastName, string surname, POSITIONS post, SENIORITIS seniority, int salary);
+    void setPosition(POSITIONS position, SENIORITIS seniority, int salary);
     string getFirstName();
     string getLastName();
     string getSurname();
     string getFullName();
-    POST getPosition();
-    SEN getSeniority();
+    POSITIONS getPosition();
+    SENIORITIS getSeniority();
     string getPositionStr();
     string getSeniorityStr();
     int getSalary();
@@ -44,11 +44,11 @@ private:
     bool incrementArtistSalary();
     bool incrementDesingSalary();
     bool incrementPMSalary();
-    string _firstName;
-    string _lastName;
-    string _surname;
-    Position* _post;
-    Calculator* _cal;
+    string mFirstName;
+    string mLastName;
+    string mSurname;
+    Position* m_pPosition;
+    Calculator* m_pCalculator;
 };
 
 #endif /* Employee_hpp */

@@ -16,18 +16,18 @@
 class Position{
 public:
     Position();
-    Position(POST post, SEN seniority, int salary);
+    Position(POSITIONS position, SENIORITIS seniority, int salary);
     ~Position();
-    void setPosition(POST newPost);
-    POST getPosition();
-    void setSeniority(SEN newSeniority);
-    SEN getSeniority();
+    void setPosition(POSITIONS newPosition);
+    POSITIONS getPosition();
+    void setSeniority(SENIORITIS newSeniority);
+    SENIORITIS getSeniority();
     void setSalary(int newSalary);
     int getSalary();
 private:
-    POST _position;
-    SEN _seniority;
-    int _salary;
+    POSITIONS mPosition;
+    SENIORITIS mSeniority;
+    int mSalary;
 };
 
 #endif /* Position_hpp */

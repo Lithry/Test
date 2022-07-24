@@ -14,68 +14,68 @@ Empleoyee::Empleoyee(){}
 
 Empleoyee::Empleoyee(string name, string lastName, string surname)
     :
-    _firstName(name),
-    _lastName(lastName),
-    _surname(surname),
-    _cal(new Calculator())
+    mFirstName(name),
+    mLastName(lastName),
+    mSurname(surname),
+    m_pCalculator(new Calculator())
 {}
 
 Empleoyee::~Empleoyee(){
-    delete _post;
-    _post = NULL;
-    delete _cal;
-    _cal = NULL;
+    delete m_pPosition;
+    m_pPosition = NULL;
+    delete m_pCalculator;
+    m_pCalculator = NULL;
 }
 
-void Empleoyee::setEmpleoyee(string name, string lastName, string surname, POST post, SEN seniority, int salary){
-    _firstName = name;
-    _lastName = lastName;
-    _surname = surname;
-    _post = new Position(post, seniority, salary);
+void Empleoyee::setEmpleoyee(string name, string lastName, string surname, POSITIONS position, SENIORITIS seniority, int salary){
+    mFirstName = name;
+    mLastName = lastName;
+    mSurname = surname;
+    m_pPosition = new Position(position, seniority, salary);
 }
 
-void Empleoyee::setPosition(POST post, SEN seniority, int salary){
-    _post = new Position(post, seniority, salary);
+void Empleoyee::setPosition(POSITIONS position, SENIORITIS seniority, int salary){
+    m_pPosition = new Position(position, seniority, salary);
 }
 
 string Empleoyee::getFirstName(){
-    return _firstName;
+    return mFirstName;
 }
 
 string Empleoyee::getLastName(){
-    return _lastName;
+    return mLastName;
 }
 
 string Empleoyee::getSurname(){
-    return _surname;
+    return mSurname;
 }
 
 string Empleoyee::getFullName(){
-    return _firstName + " " + _lastName + " " + _surname;
+    return mFirstName + " " + mLastName + " " + mSurname;
 }
 
-POST Empleoyee::getPosition(){
-    return _post->getPosition();
+POSITIONS Empleoyee::getPosition(){
+    return m_pPosition->getPosition();
 }
 
 string Empleoyee::getPositionStr(){
-    return POST_STR[_post->getPosition()];
+    return POSITIONS_STR[m_pPosition->getPosition()];
 }
 
-SEN Empleoyee::getSeniority(){
-    return _post->getSeniority();
+SENIORITIS Empleoyee::getSeniority(){
+    return m_pPosition->getSeniority();
 }
 
 string Empleoyee::getSeniorityStr(){
-    return SEN_STR[_post->getSeniority()];
+    return SENIORITIS_STR[m_pPosition->getSeniority()];
 }
 
 int Empleoyee::getSalary(){
-    return _post->getSalary();
+    return m_pPosition->getSalary();
 }
 
 bool Empleoyee::incrementSalary(){
-    switch (_post->getPosition()) {
+    switch (m_pPosition->getPosition()) {
         case CEO:
             return incrementCEOSalary();
         case HR:
@@ -97,23 +97,23 @@ bool Empleoyee::incrementSalary(){
 
 bool Empleoyee::incrementCEOSalary(){
     //100%
-    _post->setSalary(_cal->calculatePercentInc(_post->getSalary(), 100));
+    m_pPosition->setSalary(m_pCalculator->calculatePercentInc(m_pPosition->getSalary(), 100));
     return true;
 }
 
 bool Empleoyee::incrementHRSalary(){
-    switch (_post->getSeniority()) {
+    switch (m_pPosition->getSeniority()) {
         case JUNIOR:
             //0.5%
-            _post->setSalary(_cal->calculatePercentInc(_post->getSalary(), 0.5));
+            m_pPosition->setSalary(m_pCalculator->calculatePercentInc(m_pPosition->getSalary(), 0.5));
             break;
             case SEMI_SENIOR:
             //2%
-            _post->setSalary(_cal->calculatePercentInc(_post->getSalary(), 2));
+            m_pPosition->setSalary(m_pCalculator->calculatePercentInc(m_pPosition->getSalary(), 2));
             break;
             case SENIOR:
             //5%
-            _post->setSalary(_cal->calculatePercentInc(_post->getSalary(), 5));
+            m_pPosition->setSalary(m_pCalculator->calculatePercentInc(m_pPosition->getSalary(), 5));
             break;
         default:
             return false;
@@ -123,18 +123,18 @@ bool Empleoyee::incrementHRSalary(){
 }
 
 bool Empleoyee::incrementEngineeringSalary(){
-    switch (_post->getSeniority()) {
+    switch (m_pPosition->getSeniority()) {
         case JUNIOR:
             //5%
-            _post->setSalary(_cal->calculatePercentInc(_post->getSalary(), 5));
+            m_pPosition->setSalary(m_pCalculator->calculatePercentInc(m_pPosition->getSalary(), 5));
             break;
             case SEMI_SENIOR:
             //7%
-            _post->setSalary(_cal->calculatePercentInc(_post->getSalary(), 7));
+            m_pPosition->setSalary(m_pCalculator->calculatePercentInc(m_pPosition->getSalary(), 7));
             break;
             case SENIOR:
             //10%
-            _post->setSalary(_cal->calculatePercentInc(_post->getSalary(), 10));
+            m_pPosition->setSalary(m_pCalculator->calculatePercentInc(m_pPosition->getSalary(), 10));
             break;
         default:
             return false;
@@ -144,18 +144,18 @@ bool Empleoyee::incrementEngineeringSalary(){
 }
 
 bool Empleoyee::incrementArtistSalary(){
-    switch (_post->getSeniority()) {
+    switch (m_pPosition->getSeniority()) {
         case JUNIOR:
             //1%
-            _post->setSalary(_cal->calculatePercentInc(_post->getSalary(), 1));
+            m_pPosition->setSalary(m_pCalculator->calculatePercentInc(m_pPosition->getSalary(), 1));
             break;
             case SEMI_SENIOR:
             //2.5%
-            _post->setSalary(_cal->calculatePercentInc(_post->getSalary(), 2.5));
+            m_pPosition->setSalary(m_pCalculator->calculatePercentInc(m_pPosition->getSalary(), 2.5));
             break;
             case SENIOR:
             //5%
-            _post->setSalary(_cal->calculatePercentInc(_post->getSalary(), 5));
+            m_pPosition->setSalary(m_pCalculator->calculatePercentInc(m_pPosition->getSalary(), 5));
             break;
         default:
             return false;
@@ -165,18 +165,18 @@ bool Empleoyee::incrementArtistSalary(){
 }
 
 bool Empleoyee::incrementDesingSalary(){
-    switch (_post->getSeniority()) {
+    switch (m_pPosition->getSeniority()) {
         case JUNIOR:
             //2%
-            _post->setSalary(_cal->calculatePercentInc(_post->getSalary(), 2));
+            m_pPosition->setSalary(m_pCalculator->calculatePercentInc(m_pPosition->getSalary(), 2));
             break;
             case SEMI_SENIOR:
             //4%
-            _post->setSalary(_cal->calculatePercentInc(_post->getSalary(), 4));
+            m_pPosition->setSalary(m_pCalculator->calculatePercentInc(m_pPosition->getSalary(), 4));
             break;
             case SENIOR:
             //7%
-            _post->setSalary(_cal->calculatePercentInc(_post->getSalary(), 7));
+            m_pPosition->setSalary(m_pCalculator->calculatePercentInc(m_pPosition->getSalary(), 7));
             break;
         default:
             return false;
@@ -186,18 +186,18 @@ bool Empleoyee::incrementDesingSalary(){
 }
 
 bool Empleoyee::incrementPMSalary(){
-    switch (_post->getSeniority()) {
+    switch (m_pPosition->getSeniority()) {
         case JUNIOR:
             //2.5%
-            _post->setSalary(_cal->calculatePercentInc(_post->getSalary(), 2.5));
+            m_pPosition->setSalary(m_pCalculator->calculatePercentInc(m_pPosition->getSalary(), 2.5));
             break;
             case SEMI_SENIOR:
             //5%
-            _post->setSalary(_cal->calculatePercentInc(_post->getSalary(), 5));
+            m_pPosition->setSalary(m_pCalculator->calculatePercentInc(m_pPosition->getSalary(), 5));
             break;
             case SENIOR:
             //10%
-            _post->setSalary(_cal->calculatePercentInc(_post->getSalary(), 10));
+            m_pPosition->setSalary(m_pCalculator->calculatePercentInc(m_pPosition->getSalary(), 10));
             break;
         default:
             return false;

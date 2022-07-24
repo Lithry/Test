@@ -9,7 +9,7 @@
 #ifndef EnumSalary_h
 #define EnumSalary_h
 
-enum POST{
+enum POSITIONS{
     NONE = 0,
     CEO,
     HR,
@@ -18,7 +18,7 @@ enum POST{
     Desing,
     PM
 };
-static const char *POST_STR[] = {
+static const char *POSITIONS_STR[] = {
     "NONE",
     "CEO",
     "HR",
@@ -28,14 +28,14 @@ static const char *POST_STR[] = {
     "PM"
 };
 
-enum SEN{
+enum SENIORITIS{
     EMPTY = 0,
     JUNIOR,
     SEMI_SENIOR,
     SENIOR
 };
 
-static const char *SEN_STR[] = {
+static const char *SENIORITIS_STR[] = {
     "EMPTY",
     "JUNIOR",
     "SEMI SENIOR",

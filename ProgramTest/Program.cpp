@@ -21,62 +21,62 @@ Program::~Program(){
 }
 
 bool Program::init(){
-    _console = new ConsoleManager();
-    _active = true;
+    p_mConsole = new ConsoleManager();
+    mActive = true;
     
     // LOAD EMPLEOYEES
-    _loader = new Loader();
-    _employees = _loader->LoadUsers();
+    p_mLoader = new Loader();
+    mEmployees = p_mLoader->LoadUsers();
     
     return true;
 }
 
 bool Program::deinit(){
-    delete _console;
-    _console = NULL;
-    delete _loader;
-    _loader = NULL;
+    delete p_mConsole;
+    p_mConsole = NULL;
+    delete p_mLoader;
+    p_mLoader = NULL;
 
     return true;
 }
 
 void Program::run(){
     do{
-        _console->clearConsole();
+        p_mConsole->clearConsole();
         options();
-        _option = _console->enterNumberOption();
+        mOption = p_mConsole->enterNumberOption();
         
-        switch (_option) {
+        switch (mOption) {
             case 0:
-                _active = false;
+                mActive = false;
                 break;
             case 1:
-                _console->draw(to_string(_employees.size()));
+                p_mConsole->draw(to_string(mEmployees.size()));
                 break;
             case 2:
-                for (size_t i = 0; i < _employees.size(); i++){
-                    _console->draw(_employees[i]->getFullName() + " " + _employees[i]->getPositionStr() + " " + _employees[i]->getSeniorityStr() + " Salary: " + to_string(_employees[i]->getSalary()));
+                for (size_t i = 0; i < mEmployees.size(); i++){
+                    p_mConsole->draw(mEmployees[i]->getFullName() + " " + mEmployees[i]->getPositionStr() + " " + mEmployees[i]->getSeniorityStr() + " Salary: " + to_string(mEmployees[i]->getSalary()));
                 }
                 break;
             case 3:
-                for (size_t i = 0; i < _employees.size(); i++){
-                    _employees[i]->incrementSalary();
+                for (size_t i = 0; i < mEmployees.size(); i++){
+                    mEmployees[i]->incrementSalary();
                 }
-                _console->draw("Increment Employees salary DONE");
+                p_mConsole->draw("Increment Employees salary DONE");
                 break;
             default:
-                _console->draw("Invalid Option");
+                p_mConsole->draw("Invalid Option");
                 break;
         }
-        _console->wait();
-    }while(_active);
+        p_mConsole->wait();
+    }while(mActive);
 }
 
 void Program::options(){
-    _console->draw("OPTIONS");
-    _console->draw("1 - Get number of Employees");
-    _console->draw("2 - Get Employees full list");
-    _console->draw("3 - Increment Employees salary");
-    _console->draw("---------------------------------");
-    _console->draw("0 - Exit Program");
+    p_mConsole->draw("OPTIONS");
+    p_mConsole->draw("1 - Get number of Employees");
+    p_mConsole->draw("2 - Get Employees full list");
+    p_mConsole->draw("3 - Increment Employees salary");
+    p_mConsole->draw("---------------------------------");
+    p_mConsole->draw("0 - Exit Program");
 }
