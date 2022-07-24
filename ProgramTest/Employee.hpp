@@ -13,28 +13,25 @@
 #include <string>
 #include "EnumSalary.h"
 
-
-using namespace std;
-
 class Position;
 class Calculator;
 
 class Empleoyee{
 public:
     Empleoyee();
-    Empleoyee(string name, string lastName, string surname);
-    Empleoyee(string name, string lastName, string surname, POSITIONS position, SENIORITIS seniority, int salary);
+    Empleoyee(std::string name, std::string lastName, std::string surname);
+    Empleoyee(std::string name, std::string lastName, std::string surname, POSITIONS position, SENIORITIS seniority, int salary);
     ~Empleoyee();
-    void setEmpleoyee(string name, string lastName, string surname, POSITIONS post, SENIORITIS seniority, int salary);
+    void setEmpleoyee(std::string name, std::string lastName, std::string surname, POSITIONS post, SENIORITIS seniority, int salary);
     void setPosition(POSITIONS position, SENIORITIS seniority, int salary);
-    string getFirstName();
-    string getLastName();
-    string getSurname();
-    string getFullName();
+    std::string getFirstName();
+    std::string getLastName();
+    std::string getSurname();
+    std::string getFullName();
     POSITIONS getPosition();
     SENIORITIS getSeniority();
-    string getPositionStr();
-    string getSeniorityStr();
+    std::string getPositionStr();
+    std::string getSeniorityStr();
     int getSalary();
     bool incrementSalary();
 private:
@@ -44,9 +41,9 @@ private:
     bool incrementArtistSalary();
     bool incrementDesingSalary();
     bool incrementPMSalary();
-    string mFirstName;
-    string mLastName;
-    string mSurname;
+    std::string mFirstName;
+    std::string mLastName;
+    std::string mSurname;
     Position* m_pPosition;
     Calculator* m_pCalculator;
 };

@@ -12,7 +12,7 @@
 
 Empleoyee::Empleoyee(){}
 
-Empleoyee::Empleoyee(string name, string lastName, string surname)
+Empleoyee::Empleoyee(std::string name, std::string lastName, std::string surname)
     :
     mFirstName(name),
     mLastName(lastName),
@@ -27,7 +27,7 @@ Empleoyee::~Empleoyee(){
     m_pCalculator = NULL;
 }
 
-void Empleoyee::setEmpleoyee(string name, string lastName, string surname, POSITIONS position, SENIORITIS seniority, int salary){
+void Empleoyee::setEmpleoyee(std::string name, std::string lastName, std::string surname, POSITIONS position, SENIORITIS seniority, int salary){
     mFirstName = name;
     mLastName = lastName;
     mSurname = surname;
@@ -38,19 +38,19 @@ void Empleoyee::setPosition(POSITIONS position, SENIORITIS seniority, int salary
     m_pPosition = new Position(position, seniority, salary);
 }
 
-string Empleoyee::getFirstName(){
+std::string Empleoyee::getFirstName(){
     return mFirstName;
 }
 
-string Empleoyee::getLastName(){
+std::string Empleoyee::getLastName(){
     return mLastName;
 }
 
-string Empleoyee::getSurname(){
+std::string Empleoyee::getSurname(){
     return mSurname;
 }
 
-string Empleoyee::getFullName(){
+std::string Empleoyee::getFullName(){
     return mFirstName + " " + mLastName + " " + mSurname;
 }
 
@@ -58,7 +58,7 @@ POSITIONS Empleoyee::getPosition(){
     return m_pPosition->getPosition();
 }
 
-string Empleoyee::getPositionStr(){
+std::string Empleoyee::getPositionStr(){
     return POSITIONS_STR[m_pPosition->getPosition()];
 }
 
@@ -66,7 +66,7 @@ SENIORITIS Empleoyee::getSeniority(){
     return m_pPosition->getSeniority();
 }
 
-string Empleoyee::getSeniorityStr(){
+std::string Empleoyee::getSeniorityStr(){
     return SENIORITIS_STR[m_pPosition->getSeniority()];
 }
 

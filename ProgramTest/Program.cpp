@@ -51,11 +51,11 @@ void Program::run(){
                 mActive = false;
                 break;
             case 1:
-                p_mConsole->draw(to_string(mEmployees.size()));
+                p_mConsole->draw(std::to_string(mEmployees.size()));
                 break;
             case 2:
                 for (size_t i = 0; i < mEmployees.size(); i++){
-                    p_mConsole->draw(mEmployees[i]->getFullName() + " " + mEmployees[i]->getPositionStr() + " " + mEmployees[i]->getSeniorityStr() + " Salary: " + to_string(mEmployees[i]->getSalary()));
+                    p_mConsole->draw(mEmployees[i]->getFullName() + " " + mEmployees[i]->getPositionStr() + " " + mEmployees[i]->getSeniorityStr() + " Salary: " + std::to_string(mEmployees[i]->getSalary()));
                 }
                 break;
             case 3:

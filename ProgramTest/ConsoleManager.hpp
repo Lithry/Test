@@ -12,14 +12,12 @@
 #include <stdio.h>
 #include <string>
 
-using namespace std;
-
 class ConsoleManager{
 public:
     ConsoleManager();
     ~ConsoleManager();
     void clearConsole();
-    void draw(string text);
+    void draw(std::string text);
     void wait();
     int enterNumberOption();
 };

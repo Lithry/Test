@@ -21,7 +21,7 @@ Loader::~Loader(){
 
 std::vector<Empleoyee*> Loader::LoadUsers(){
     for (size_t i = 0; i < 251; i++){
-        Empleoyee* e = new Empleoyee("Empleoyee", "Nº", to_string(i+1));
+        Empleoyee* e = new Empleoyee("Empleoyee", "Nº", std::to_string(i+1));
         mEmployees.push_back(e);
     }
     
@@ -77,7 +77,7 @@ std::vector<Empleoyee*> Loader::LoadUsers(){
     
     for (size_t i = 0; i < 30; i++) {
         Empleoyee* e = mEmployees.front();
-        mEmployees.erase(_employees.begin());
+        mEmployees.erase(mEmployees.begin());
         if (i<20)
             e->setPosition(PM, SEMI_SENIOR, 2400);
         else

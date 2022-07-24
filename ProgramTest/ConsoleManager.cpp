@@ -9,8 +9,6 @@
 #include "ConsoleManager.hpp"
 #include <iostream>
 
-//using namespace std;
-
 ConsoleManager::ConsoleManager(){
     system("clear");
 }
@@ -23,8 +21,8 @@ void ConsoleManager::clearConsole(){
     system("clear");
 }
 
-void ConsoleManager::draw(string text){
-    cout << text << endl;
+void ConsoleManager::draw(std::string text){
+    std::cout << text << std::endl;
 }
 
 void ConsoleManager::wait(){
@@ -35,12 +33,12 @@ int ConsoleManager::enterNumberOption(){
     int x;
     while(1)
     {
-        cout << "Select option: ";
-        cin >> x;
-        if (!cin.fail()) break;
-        cin.clear();
-        cin.ignore(10000,'\n');
-        cout << "Bad entry.\n";
+        std::cout << "Select option: ";
+        std::cin >> x;
+        if (!std::cin.fail()) break;
+        std::cin.clear();
+        std::cin.ignore(10000,'\n');
+        std::cout << "Bad entry.\n";
     }
     return x;
 }
