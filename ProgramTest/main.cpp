@@ -8,13 +8,10 @@
 
 #include <iostream>
 #include "Program.hpp"
+#include <memory>
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    //std::cout << "Hello, World!\n";
-    Program* p = new Program();
+    std::unique_ptr<Program> p = std::make_unique<Program>();
     p->run();
-    delete p;
-    p = NULL;
     return 0;
 }

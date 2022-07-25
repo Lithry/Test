@@ -44,8 +44,8 @@ private:
     std::string mFirstName;
     std::string mLastName;
     std::string mSurname;
-    Position* m_pPosition;
-    Calculator* m_pCalculator;
+    std::unique_ptr<Position> m_pPosition;
+    std::unique_ptr<Calculator> m_pCalculator;
 };
 
 #endif /* Employee_hpp */

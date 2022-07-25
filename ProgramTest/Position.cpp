@@ -19,9 +19,7 @@ Position::Position(POSITIONS position, SENIORITIS seniority, int salary)
     mSalary(salary)
 {}
 
-Position::~Position(){
-    
-}
+Position::~Position(){}
 
 void Position::setPosition(POSITIONS newPosition){
     mPosition = newPosition;

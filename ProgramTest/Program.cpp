@@ -12,35 +12,32 @@
 #include "ConsoleManager.hpp"
 #include "Loader.hpp"
 
-Program::Program(){
-    init();
-}
+Program::Program():
+    p_mConsole(nullptr)
+{}
 
-Program::~Program(){
-    deinit();
-}
+Program::~Program(){}
 
 bool Program::init(){
-    p_mConsole = new ConsoleManager();
+    p_mConsole = std::make_unique<ConsoleManager>();
+    
     mActive = true;
     
     // LOAD EMPLEOYEES
-    p_mLoader = new Loader();
+    p_mLoader = std::make_unique<Loader>();
     mEmployees = p_mLoader->LoadUsers();
     
     return true;
 }
 
 bool Program::deinit(){
-    delete p_mConsole;
-    p_mConsole = NULL;
-    delete p_mLoader;
-    p_mLoader = NULL;
-
+    p_mConsole->draw("------ PROGRAM END ------");
     return true;
 }
 
 void Program::run(){
+    init();
+    
     do{
         p_mConsole->clearConsole();
         options();
@@ -52,24 +49,30 @@ void Program::run(){
                 break;
             case 1:
                 p_mConsole->draw(std::to_string(mEmployees.size()));
+                p_mConsole->wait();
                 break;
             case 2:
                 for (size_t i = 0; i < mEmployees.size(); i++){
                     p_mConsole->draw(mEmployees[i]->getFullName() + " " + mEmployees[i]->getPositionStr() + " " + mEmployees[i]->getSeniorityStr() + " Salary: " + std::to_string(mEmployees[i]->getSalary()));
                 }
+                p_mConsole->wait();
                 break;
             case 3:
                 for (size_t i = 0; i < mEmployees.size(); i++){
                     mEmployees[i]->incrementSalary();
                 }
                 p_mConsole->draw("Increment Employees salary DONE");
+                p_mConsole->wait();
                 break;
             default:
                 p_mConsole->draw("Invalid Option");
+                p_mConsole->wait();
                 break;
         }
-        p_mConsole->wait();
+        
     }while(mActive);
+    
+    deinit();
 }
 
 void Program::options(){

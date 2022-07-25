@@ -12,26 +12,23 @@
 
 Loader::Loader(){}
 
-Loader::~Loader(){
-    for (size_t i = 0; i < mEmployees.size(); i++){
-        delete mEmployees[i];
-        mEmployees[i] = NULL;
-    }
-}
+Loader::~Loader(){}
 
-std::vector<Empleoyee*> Loader::LoadUsers(){
+std::vector<std::unique_ptr<Empleoyee>> Loader::LoadUsers(){
+    std::vector<std::unique_ptr<Empleoyee>> mEmployees;
+    
     for (size_t i = 0; i < 251; i++){
-        Empleoyee* e = new Empleoyee("Empleoyee", "Nº", std::to_string(i+1));
-        mEmployees.push_back(e);
+        std::unique_ptr<Empleoyee> e = std::make_unique<Empleoyee>("Empleoyee", "Nº", std::to_string(i+1));
+        mEmployees.push_back(std::move(e));
     }
     
-    Empleoyee* e = mEmployees.front();
+    std::unique_ptr<Empleoyee> e = std::move(mEmployees.front());
     mEmployees.erase(mEmployees.begin());
     e->setPosition(CEO, EMPTY, 20000);
-    mEmployees.push_back(e);
+    mEmployees.push_back(std::move(e));
     
     for (size_t i = 0; i < 20; i++) {
-        Empleoyee* e = mEmployees.front();
+        std::unique_ptr<Empleoyee> e = std::move(mEmployees.front());
         mEmployees.erase(mEmployees.begin());
         if (i < 13)
             e->setPosition(HR, JUNIOR, 500);
@@ -39,11 +36,11 @@ std::vector<Empleoyee*> Loader::LoadUsers(){
             e->setPosition(HR, SEMI_SENIOR, 1000);
         else
             e->setPosition(HR, SENIOR, 1500);
-        mEmployees.push_back(e);
+        mEmployees.push_back(std::move(e));
     }
     
     for (size_t i = 0; i < 150; i++) {
-        Empleoyee* e = mEmployees.front();
+        std::unique_ptr<Empleoyee> e = std::move(mEmployees.front());
         mEmployees.erase(mEmployees.begin());
         if (i < 32)
             e->setPosition(Engineering, JUNIOR, 1500);
@@ -52,37 +49,37 @@ std::vector<Empleoyee*> Loader::LoadUsers(){
         else
             e->setPosition(Engineering, SENIOR, 5000);
         
-        mEmployees.push_back(e);
+        mEmployees.push_back(std::move(e));
     }
     
     for (size_t i = 0; i < 25; i++) {
-        Empleoyee* e = mEmployees.front();
+        std::unique_ptr<Empleoyee> e = std::move(mEmployees.front());
         mEmployees.erase(mEmployees.begin());
         if (i<20)
             e->setPosition(Artist, SEMI_SENIOR, 1200);
         else
             e->setPosition(Artist, SENIOR, 2000);
-        mEmployees.push_back(e);
+        mEmployees.push_back(std::move(e));
     }
     
     for (size_t i = 0; i < 25; i++) {
-        Empleoyee* e = mEmployees.front();
+        std::unique_ptr<Empleoyee> e = std::move(mEmployees.front());
         mEmployees.erase(mEmployees.begin());
         if (i<15)
             e->setPosition(Desing, JUNIOR, 800);
         else
             e->setPosition(Desing, SENIOR, 2000);
-        mEmployees.push_back(e);
+        mEmployees.push_back(std::move(e));
     }
     
     for (size_t i = 0; i < 30; i++) {
-        Empleoyee* e = mEmployees.front();
+        std::unique_ptr<Empleoyee> e = std::move(mEmployees.front());
         mEmployees.erase(mEmployees.begin());
         if (i<20)
             e->setPosition(PM, SEMI_SENIOR, 2400);
         else
             e->setPosition(PM, SENIOR, 4000);
-        mEmployees.push_back(e);
+        mEmployees.push_back(std::move(e));
     }
     //RANDOM SHUFFLE
     std::shuffle(mEmployees.begin(), mEmployees.end(), std::random_device());

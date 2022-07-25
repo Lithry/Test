@@ -8,13 +8,9 @@
 
 #include "Calculator.hpp"
 
-Calculator::Calculator(){
-    
-}
+Calculator::Calculator(){}
 
-Calculator::~Calculator(){
-    
-}
+Calculator::~Calculator(){}
 
 int Calculator::calculatePercentInc(int base, float percentInc){
     float increment = (percentInc * base) / 100;

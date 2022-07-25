@@ -17,25 +17,20 @@ Empleoyee::Empleoyee(std::string name, std::string lastName, std::string surname
     mFirstName(name),
     mLastName(lastName),
     mSurname(surname),
-    m_pCalculator(new Calculator())
+    m_pCalculator(std::make_unique<Calculator>())
 {}
 
-Empleoyee::~Empleoyee(){
-    delete m_pPosition;
-    m_pPosition = NULL;
-    delete m_pCalculator;
-    m_pCalculator = NULL;
-}
+Empleoyee::~Empleoyee(){}
 
 void Empleoyee::setEmpleoyee(std::string name, std::string lastName, std::string surname, POSITIONS position, SENIORITIS seniority, int salary){
     mFirstName = name;
     mLastName = lastName;
     mSurname = surname;
-    m_pPosition = new Position(position, seniority, salary);
+    m_pPosition = std::make_unique<Position>(position, seniority, salary);
 }
 
 void Empleoyee::setPosition(POSITIONS position, SENIORITIS seniority, int salary){
-    m_pPosition = new Position(position, seniority, salary);
+    m_pPosition = std::make_unique<Position>(position, seniority, salary);
 }
 
 std::string Empleoyee::getFirstName(){

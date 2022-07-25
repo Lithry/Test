@@ -10,12 +10,10 @@
 #include <iostream>
 
 ConsoleManager::ConsoleManager(){
-    system("clear");
+    //system("clear");
 }
 
-ConsoleManager::~ConsoleManager(){
-    
-}
+ConsoleManager::~ConsoleManager(){}
 
 void ConsoleManager::clearConsole(){
     system("clear");

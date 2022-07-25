@@ -19,9 +19,7 @@ class Loader{
 public:
     Loader();
     ~Loader();
-    std::vector<Empleoyee*> LoadUsers();
-private:
-    std::vector<Empleoyee*> mEmployees;
+    std::vector<std::unique_ptr<Empleoyee>> LoadUsers();
 };
 
 #endif /* Loader_hpp */
