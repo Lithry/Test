@@ -11,21 +11,22 @@
 #include "Employee.hpp"
 #include "ConsoleManager.hpp"
 #include "Loader.hpp"
+#include "Position.hpp"
+#include "SalaryRiser.hpp"
 
-Program::Program():
-    p_mConsole(nullptr)
-{}
+Program::Program(){}
 
 Program::~Program(){}
 
 bool Program::init(){
     p_mConsole = std::make_unique<ConsoleManager>();
+    p_mSalaryRiser = std::make_unique<SalaryRiser>();
     
     mActive = true;
     
     // LOAD EMPLEOYEES
-    p_mLoader = std::make_unique<Loader>();
-    mEmployees = p_mLoader->LoadUsers();
+    std::unique_ptr<Loader> pLoader = std::make_unique<Loader>();
+    mEmployees = pLoader->loadUsers();
     
     return true;
 }
@@ -52,14 +53,17 @@ void Program::run(){
                 p_mConsole->wait();
                 break;
             case 2:
+                p_mConsole->setFloatPrecision(2);
                 for (size_t i = 0; i < mEmployees.size(); i++){
-                    p_mConsole->draw(mEmployees[i]->getFullName() + " " + mEmployees[i]->getPositionStr() + " " + mEmployees[i]->getSeniorityStr() + " Salary: " + std::to_string(mEmployees[i]->getSalary()));
+                    p_mConsole->draw(mEmployees[i]->getFullName() + " " + mEmployees[i]->getPositionStrOnly() + " " + mEmployees[i]->getSeniorityStrOnly() + " Salary: " + std::to_string((int)mEmployees[i]->getSalary()));
                 }
                 p_mConsole->wait();
                 break;
             case 3:
                 for (size_t i = 0; i < mEmployees.size(); i++){
-                    mEmployees[i]->incrementSalary();
+                    std::unique_ptr<Position> employPosition = std::move(mEmployees[i]->getPosition());
+                    employPosition->setSalary(p_mSalaryRiser->riseSalary(employPosition->getSalary(), employPosition->getPosition(), employPosition->getSeniority()));
+                    mEmployees[i]->setPosition(employPosition);
                 }
                 p_mConsole->draw("Increment Employees salary DONE");
                 p_mConsole->wait();

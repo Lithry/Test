@@ -8,11 +8,9 @@
 
 #include "Position.hpp"
 
-Position::Position(){
-    
-}
+Position::Position(){}
 
-Position::Position(POSITIONS position, SENIORITIS seniority, int salary)
+Position::Position(POSITIONS position, SENIORITIS seniority, float salary)
     :
     mPosition(position),
     mSeniority(seniority),
@@ -37,10 +35,10 @@ SENIORITIS Position::getSeniority(){
     return mSeniority;
 }
 
-void Position::setSalary(int newSalary){
+void Position::setSalary(float newSalary){
     mSalary = newSalary;
 }
 
-int Position::getSalary(){
+float Position::getSalary(){
     return mSalary;
 }

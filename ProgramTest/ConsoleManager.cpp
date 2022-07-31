@@ -8,12 +8,15 @@
 
 #include "ConsoleManager.hpp"
 #include <iostream>
+#include <iomanip>
 
-ConsoleManager::ConsoleManager(){
-    //system("clear");
-}
+ConsoleManager::ConsoleManager(){}
 
 ConsoleManager::~ConsoleManager(){}
+
+void ConsoleManager::setFloatPrecision(int precision){
+    std::cout << std::setprecision(precision) << std::fixed;
+}
 
 void ConsoleManager::clearConsole(){
     system("clear");

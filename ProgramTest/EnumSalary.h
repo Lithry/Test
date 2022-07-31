@@ -34,12 +34,20 @@ enum SENIORITIS{
     SEMI_SENIOR,
     SENIOR
 };
-
 static const char *SENIORITIS_STR[] = {
     "EMPTY",
     "JUNIOR",
     "SEMI SENIOR",
     "SENIOR"
+};
+
+static const float SALARYINCRESS_VALUE[6][3] = {
+    {100, 100, 100},// CEO
+    {0.5, 2, 5},    // HR
+    {5, 7, 10},     // Engineering
+    {1, 2.5, 5},    // Artist
+    {4, 5, 7},      // Desing
+    {2.5, 5, 10}    // PM
 };
 
 #endif /* EnumSalary_h */

@@ -16,6 +16,7 @@ class ConsoleManager{
 public:
     ConsoleManager();
     ~ConsoleManager();
+    void setFloatPrecision(int precision);
     void clearConsole();
     void draw(std::string text);
     void wait();

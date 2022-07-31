@@ -14,7 +14,6 @@
 #include "EnumSalary.h"
 
 class Position;
-class Calculator;
 
 class Empleoyee{
 public:
@@ -23,29 +22,23 @@ public:
     Empleoyee(std::string name, std::string lastName, std::string surname, POSITIONS position, SENIORITIS seniority, int salary);
     ~Empleoyee();
     void setEmpleoyee(std::string name, std::string lastName, std::string surname, POSITIONS post, SENIORITIS seniority, int salary);
-    void setPosition(POSITIONS position, SENIORITIS seniority, int salary);
+    void setPosition(POSITIONS position, SENIORITIS seniority, float salary);
+    void setPosition(std::unique_ptr<Position>& newPosition);
     std::string getFirstName();
     std::string getLastName();
     std::string getSurname();
     std::string getFullName();
-    POSITIONS getPosition();
-    SENIORITIS getSeniority();
-    std::string getPositionStr();
-    std::string getSeniorityStr();
-    int getSalary();
-    bool incrementSalary();
+    std::unique_ptr<Position>& getPosition();
+    POSITIONS getPositionOnly();
+    SENIORITIS getSeniorityOnly();
+    std::string getPositionStrOnly();
+    std::string getSeniorityStrOnly();
+    float getSalary();
 private:
-    bool incrementCEOSalary();
-    bool incrementHRSalary();
-    bool incrementEngineeringSalary();
-    bool incrementArtistSalary();
-    bool incrementDesingSalary();
-    bool incrementPMSalary();
     std::string mFirstName;
     std::string mLastName;
     std::string mSurname;
     std::unique_ptr<Position> m_pPosition;
-    std::unique_ptr<Calculator> m_pCalculator;
 };
 
 #endif /* Employee_hpp */

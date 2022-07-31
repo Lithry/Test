@@ -15,7 +15,7 @@
 
 class Empleoyee;
 class ConsoleManager;
-class Loader;
+class SalaryRiser;
 
 class Program{
 public:
@@ -27,10 +27,10 @@ private:
     bool deinit();
     void options();
     std::unique_ptr<ConsoleManager> p_mConsole;
-    std::unique_ptr<Loader> p_mLoader;
+    std::vector<std::unique_ptr<Empleoyee>> mEmployees;
+    std::unique_ptr<SalaryRiser> p_mSalaryRiser;
     bool mActive;
     int mOption;
-    std::vector<std::unique_ptr<Empleoyee>> mEmployees;
 };
 
 #endif /* Program_hpp */

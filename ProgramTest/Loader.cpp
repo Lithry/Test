@@ -14,7 +14,7 @@ Loader::Loader(){}
 
 Loader::~Loader(){}
 
-std::vector<std::unique_ptr<Empleoyee>> Loader::LoadUsers(){
+std::vector<std::unique_ptr<Empleoyee>> Loader::loadUsers(){
     std::vector<std::unique_ptr<Empleoyee>> mEmployees;
     
     for (size_t i = 0; i < 251; i++){

@@ -16,18 +16,18 @@
 class Position{
 public:
     Position();
-    Position(POSITIONS position, SENIORITIS seniority, int salary);
+    Position(POSITIONS position, SENIORITIS seniority, float salary);
     ~Position();
     void setPosition(POSITIONS newPosition);
     POSITIONS getPosition();
     void setSeniority(SENIORITIS newSeniority);
     SENIORITIS getSeniority();
-    void setSalary(int newSalary);
-    int getSalary();
+    void setSalary(float newSalary);
+    float getSalary();
 private:
     POSITIONS mPosition;
     SENIORITIS mSeniority;
-    int mSalary;
+    float mSalary;
 };
 
 #endif /* Position_hpp */

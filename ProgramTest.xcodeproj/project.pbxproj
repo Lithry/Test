@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE6033962895F6D100964C69 /* SalaryRiser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE6033942895F6D100964C69 /* SalaryRiser.cpp */; };
 		BE755B3D287B39B60003CE51 /* Loader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE755B3B287B39B60003CE51 /* Loader.cpp */; };
 		CE1F039E283F045D001DE2AD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE1F039D283F045D001DE2AD /* main.cpp */; };
 		CE1F03AB283F056A001DE2AD /* Program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE1F03A9283F056A001DE2AD /* Program.cpp */; };
 		CE370B832842D2C800959BBA /* ConsoleManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE370B812842D2C800959BBA /* ConsoleManager.cpp */; };
-		CE37AA6C2843EA3700312A59 /* Calculator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE37AA6A2843EA3700312A59 /* Calculator.cpp */; };
 		CE412387284183310070E041 /* Employee.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE412385284183310070E041 /* Employee.cpp */; };
 		CE41238A284186080070E041 /* Position.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE412388284186080070E041 /* Position.cpp */; };
 /* End PBXBuildFile section */
@@ -29,6 +29,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BE6033942895F6D100964C69 /* SalaryRiser.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SalaryRiser.cpp; sourceTree = "<group>"; };
+		BE6033952895F6D100964C69 /* SalaryRiser.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SalaryRiser.hpp; sourceTree = "<group>"; };
 		BE755B3B287B39B60003CE51 /* Loader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Loader.cpp; sourceTree = "<group>"; };
 		BE755B3C287B39B60003CE51 /* Loader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Loader.hpp; sourceTree = "<group>"; };
 		CE1F039A283F045D001DE2AD /* ProgramTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ProgramTest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,8 +39,6 @@
 		CE1F03AA283F056A001DE2AD /* Program.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Program.hpp; sourceTree = "<group>"; };
 		CE370B812842D2C800959BBA /* ConsoleManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ConsoleManager.cpp; sourceTree = "<group>"; };
 		CE370B822842D2C800959BBA /* ConsoleManager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ConsoleManager.hpp; sourceTree = "<group>"; };
-		CE37AA6A2843EA3700312A59 /* Calculator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Calculator.cpp; sourceTree = "<group>"; };
-		CE37AA6B2843EA3700312A59 /* Calculator.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Calculator.hpp; sourceTree = "<group>"; };
 		CE412385284183310070E041 /* Employee.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Employee.cpp; sourceTree = "<group>"; };
 		CE412386284183310070E041 /* Employee.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Employee.hpp; sourceTree = "<group>"; };
 		CE412388284186080070E041 /* Position.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Position.cpp; sourceTree = "<group>"; };
@@ -88,16 +88,16 @@
 				CE1F03A9283F056A001DE2AD /* Program.cpp */,
 				CE1F03AA283F056A001DE2AD /* Program.hpp */,
 				CE412385284183310070E041 /* Employee.cpp */,
+				CE412386284183310070E041 /* Employee.hpp */,
 				BE755B3B287B39B60003CE51 /* Loader.cpp */,
 				BE755B3C287B39B60003CE51 /* Loader.hpp */,
-				CE412386284183310070E041 /* Employee.hpp */,
 				CE412388284186080070E041 /* Position.cpp */,
 				CE412389284186080070E041 /* Position.hpp */,
 				CE41238B2841874C0070E041 /* EnumSalary.h */,
 				CE370B812842D2C800959BBA /* ConsoleManager.cpp */,
 				CE370B822842D2C800959BBA /* ConsoleManager.hpp */,
-				CE37AA6A2843EA3700312A59 /* Calculator.cpp */,
-				CE37AA6B2843EA3700312A59 /* Calculator.hpp */,
+				BE6033942895F6D100964C69 /* SalaryRiser.cpp */,
+				BE6033952895F6D100964C69 /* SalaryRiser.hpp */,
 			);
 			name = Program;
 			sourceTree = "<group>";
@@ -160,10 +160,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE1F03AB283F056A001DE2AD /* Program.cpp in Sources */,
+				BE6033962895F6D100964C69 /* SalaryRiser.cpp in Sources */,
 				CE1F039E283F045D001DE2AD /* main.cpp in Sources */,
 				BE755B3D287B39B60003CE51 /* Loader.cpp in Sources */,
 				CE41238A284186080070E041 /* Position.cpp in Sources */,
-				CE37AA6C2843EA3700312A59 /* Calculator.cpp in Sources */,
 				CE412387284183310070E041 /* Employee.cpp in Sources */,
 				CE370B832842D2C800959BBA /* ConsoleManager.cpp in Sources */,
 			);
