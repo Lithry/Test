@@ -10,8 +10,7 @@
 #define EnumSalary_h
 
 enum POSITIONS{
-    NONE = 0,
-    CEO,
+    CEO = 0,
     HR,
     Engineering,
     Artist,
@@ -19,7 +18,6 @@ enum POSITIONS{
     PM
 };
 static const char *POSITIONS_STR[] = {
-    "NONE",
     "CEO",
     "HR",
     "Engineering",
@@ -41,13 +39,13 @@ static const char *SENIORITIS_STR[] = {
     "SENIOR"
 };
 
-static const float SALARYINCRESS_VALUE[6][3] = {
-    {100, 100, 100},// CEO
-    {0.5, 2, 5},    // HR
-    {5, 7, 10},     // Engineering
-    {1, 2.5, 5},    // Artist
-    {4, 5, 7},      // Desing
-    {2.5, 5, 10}    // PM
+static const float SALARYINCRESS_VALUE[6][4] = {
+    {100, 0, 0, 0},// CEO
+    {0, 0.5, 2, 5},    // HR
+    {0, 5, 7, 10},     // Engineering
+    {0, 1, 2.5, 5},    // Artist
+    {0, 4, 5, 7},      // Desing
+    {0, 2.5, 5, 10}    // PM
 };
 
 #endif /* EnumSalary_h */

@@ -13,6 +13,10 @@ SalaryRiser::SalaryRiser(){}
 SalaryRiser::~SalaryRiser(){}
 
 float SalaryRiser::riseSalary(float salary, POSITIONS position, SENIORITIS seniority){
-    float increment = (SALARYINCRESS_VALUE[position-1][seniority-1] * salary) / 100;
+    if (salary < 1)
+        return 0;
+    
+    
+    float increment = (SALARYINCRESS_VALUE[position][seniority] * salary) / 100;
     return salary + increment;
 }

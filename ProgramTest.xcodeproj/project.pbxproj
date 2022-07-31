@@ -8,15 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		BE6033962895F6D100964C69 /* SalaryRiser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE6033942895F6D100964C69 /* SalaryRiser.cpp */; };
+		BE6EA5CF2897345D0036369A /* Position.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE412388284186080070E041 /* Position.cpp */; };
+		BE6EA5D3289736E40036369A /* Program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE1F03A9283F056A001DE2AD /* Program.cpp */; };
+		BE6EA5D4289736E40036369A /* SalaryRiser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE6033942895F6D100964C69 /* SalaryRiser.cpp */; };
+		BE6EA5D6289736E40036369A /* Loader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE755B3B287B39B60003CE51 /* Loader.cpp */; };
+		BE6EA5D7289736E40036369A /* Employee.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE412385284183310070E041 /* Employee.cpp */; };
+		BE6EA5D8289736E40036369A /* TestCases.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE6EA5BA28972BB00036369A /* TestCases.cpp */; };
+		BE6EA5D9289736E40036369A /* Position.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE412388284186080070E041 /* Position.cpp */; };
+		BE6EA5DA289736E40036369A /* ConsoleManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE370B812842D2C800959BBA /* ConsoleManager.cpp */; };
 		BE755B3D287B39B60003CE51 /* Loader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE755B3B287B39B60003CE51 /* Loader.cpp */; };
 		CE1F039E283F045D001DE2AD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE1F039D283F045D001DE2AD /* main.cpp */; };
 		CE1F03AB283F056A001DE2AD /* Program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE1F03A9283F056A001DE2AD /* Program.cpp */; };
 		CE370B832842D2C800959BBA /* ConsoleManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE370B812842D2C800959BBA /* ConsoleManager.cpp */; };
 		CE412387284183310070E041 /* Employee.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE412385284183310070E041 /* Employee.cpp */; };
-		CE41238A284186080070E041 /* Position.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE412388284186080070E041 /* Position.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		BE6EA5DC289736E40036369A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		CE1F0398283F045D001DE2AD /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -31,6 +47,9 @@
 /* Begin PBXFileReference section */
 		BE6033942895F6D100964C69 /* SalaryRiser.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SalaryRiser.cpp; sourceTree = "<group>"; };
 		BE6033952895F6D100964C69 /* SalaryRiser.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SalaryRiser.hpp; sourceTree = "<group>"; };
+		BE6EA5B928972B200036369A /* catch.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = catch.hpp; sourceTree = "<group>"; };
+		BE6EA5BA28972BB00036369A /* TestCases.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TestCases.cpp; sourceTree = "<group>"; };
+		BE6EA5E0289736E40036369A /* ProgramTestUnitTesting */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ProgramTestUnitTesting; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE755B3B287B39B60003CE51 /* Loader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Loader.cpp; sourceTree = "<group>"; };
 		BE755B3C287B39B60003CE51 /* Loader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Loader.hpp; sourceTree = "<group>"; };
 		CE1F039A283F045D001DE2AD /* ProgramTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ProgramTest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +66,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BE6EA5DB289736E40036369A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CE1F0397283F045D001DE2AD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -69,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				CE1F039A283F045D001DE2AD /* ProgramTest */,
+				BE6EA5E0289736E40036369A /* ProgramTestUnitTesting */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,6 +125,8 @@
 				CE370B822842D2C800959BBA /* ConsoleManager.hpp */,
 				BE6033942895F6D100964C69 /* SalaryRiser.cpp */,
 				BE6033952895F6D100964C69 /* SalaryRiser.hpp */,
+				BE6EA5B928972B200036369A /* catch.hpp */,
+				BE6EA5BA28972BB00036369A /* TestCases.cpp */,
 			);
 			name = Program;
 			sourceTree = "<group>";
@@ -105,6 +134,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		BE6EA5D1289736E40036369A /* ProgramTestUnitTesting */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE6EA5DD289736E40036369A /* Build configuration list for PBXNativeTarget "ProgramTestUnitTesting" */;
+			buildPhases = (
+				BE6EA5D2289736E40036369A /* Sources */,
+				BE6EA5DB289736E40036369A /* Frameworks */,
+				BE6EA5DC289736E40036369A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ProgramTestUnitTesting;
+			productName = ProgramTest;
+			productReference = BE6EA5E0289736E40036369A /* ProgramTestUnitTesting */;
+			productType = "com.apple.product-type.tool";
+		};
 		CE1F0399283F045D001DE2AD /* ProgramTest */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE1F03A1283F045D001DE2AD /* Build configuration list for PBXNativeTarget "ProgramTest" */;
@@ -150,11 +196,26 @@
 			projectRoot = "";
 			targets = (
 				CE1F0399283F045D001DE2AD /* ProgramTest */,
+				BE6EA5D1289736E40036369A /* ProgramTestUnitTesting */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BE6EA5D2289736E40036369A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE6EA5D3289736E40036369A /* Program.cpp in Sources */,
+				BE6EA5D4289736E40036369A /* SalaryRiser.cpp in Sources */,
+				BE6EA5D6289736E40036369A /* Loader.cpp in Sources */,
+				BE6EA5D7289736E40036369A /* Employee.cpp in Sources */,
+				BE6EA5D8289736E40036369A /* TestCases.cpp in Sources */,
+				BE6EA5D9289736E40036369A /* Position.cpp in Sources */,
+				BE6EA5DA289736E40036369A /* ConsoleManager.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CE1F0396283F045D001DE2AD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -163,8 +224,8 @@
 				BE6033962895F6D100964C69 /* SalaryRiser.cpp in Sources */,
 				CE1F039E283F045D001DE2AD /* main.cpp in Sources */,
 				BE755B3D287B39B60003CE51 /* Loader.cpp in Sources */,
-				CE41238A284186080070E041 /* Position.cpp in Sources */,
 				CE412387284183310070E041 /* Employee.cpp in Sources */,
+				BE6EA5CF2897345D0036369A /* Position.cpp in Sources */,
 				CE370B832842D2C800959BBA /* ConsoleManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -172,6 +233,24 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		BE6EA5DE289736E40036369A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				GCC_NO_COMMON_BLOCKS = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BE6EA5DF289736E40036369A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				GCC_NO_COMMON_BLOCKS = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		CE1F039F283F045D001DE2AD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -285,6 +364,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				GCC_NO_COMMON_BLOCKS = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -293,6 +373,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				GCC_NO_COMMON_BLOCKS = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -300,6 +381,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BE6EA5DD289736E40036369A /* Build configuration list for PBXNativeTarget "ProgramTestUnitTesting" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE6EA5DE289736E40036369A /* Debug */,
+				BE6EA5DF289736E40036369A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CE1F0395283F045D001DE2AD /* Build configuration list for PBXProject "ProgramTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
