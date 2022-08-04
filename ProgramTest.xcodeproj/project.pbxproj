@@ -83,6 +83,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BEB9D399289C10E6006D39B2 /* UnitTest */ = {
+			isa = PBXGroup;
+			children = (
+				BE6EA5B928972B200036369A /* catch.hpp */,
+				BE6EA5BA28972BB00036369A /* TestCases.cpp */,
+			);
+			name = UnitTest;
+			sourceTree = "<group>";
+		};
 		CE1F0391283F045D001DE2AD = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +121,7 @@
 		CE1F03A4283F04B5001DE2AD /* Program */ = {
 			isa = PBXGroup;
 			children = (
+				BEB9D399289C10E6006D39B2 /* UnitTest */,
 				CE1F03A9283F056A001DE2AD /* Program.cpp */,
 				CE1F03AA283F056A001DE2AD /* Program.hpp */,
 				CE412385284183310070E041 /* Employee.cpp */,
@@ -125,8 +135,6 @@
 				CE370B822842D2C800959BBA /* ConsoleManager.hpp */,
 				BE6033942895F6D100964C69 /* SalaryRiser.cpp */,
 				BE6033952895F6D100964C69 /* SalaryRiser.hpp */,
-				BE6EA5B928972B200036369A /* catch.hpp */,
-				BE6EA5BA28972BB00036369A /* TestCases.cpp */,
 			);
 			name = Program;
 			sourceTree = "<group>";
